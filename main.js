@@ -1,5 +1,5 @@
 const express = require('express')
-const {engine} = require('express-handlebars')
+const {_engine} = require('express-handlebars')
 
 const PORT = parseInt(process.env.PORT) || 3001
 
