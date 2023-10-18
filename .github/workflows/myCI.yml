@@ -23,7 +23,7 @@ jobs:
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     - name: Send mail
-      uses: dawidd6/action-send-mail@master
+      uses: dawidd6/action-send-mail@v3
       with:
         # Specify connection via URL (replaces server_address, server_port, secure,
         # username and password)
@@ -39,7 +39,7 @@ jobs:
         subject: Github Actions job result
         to: e1221805@u.nus.edu
         from: Singapore # <user@example.com>
-        body: result.html
+        html_body: file://result.html
 
 
     - name: get date in Github
