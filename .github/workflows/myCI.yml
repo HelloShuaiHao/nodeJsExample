@@ -29,7 +29,6 @@ jobs:
         # username and password)
         #
         # Format:
-        #
         #  * smtp://user:password@server:port
         #  * smtp+starttls://user:password@server:port
         connection_url: ${{secrets.MAILCONNECTION}}
