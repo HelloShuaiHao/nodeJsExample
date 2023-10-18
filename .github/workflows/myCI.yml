@@ -36,7 +36,7 @@ jobs:
     # koun riga kjnn bxml
     # 这是第二个
     - name: Send mail
-      uses: dawidd6/action-send-mail@v3
+      uses: juanformoso/action-send-mail@1
       with:
         # Specify connection via URL (replaces server_address, server_port, secure,
         # username and password)
@@ -52,7 +52,8 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        html_body: ${{github.workspace}}/result.html
+        body: ${{github.workspace}}/result.html
+        content_type: text/html
 
 
     - name: get date in Github
