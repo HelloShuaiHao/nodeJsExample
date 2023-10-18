@@ -25,6 +25,7 @@ jobs:
       id: read_file
       run: |
         cat ${{ github.workspace }}/result.txt
+      
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     # 注意上面这个版本不行
@@ -55,11 +56,12 @@ jobs:
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
         body: "😄"
-        
+      
 
     - name: get date in Github
       id: get_date_in_github
-      run: echo "date in github $(date)"
+      run: cat ${{ github.workspace }}/result.txt
+      
     
     - name: list directory
       id: list_directory
