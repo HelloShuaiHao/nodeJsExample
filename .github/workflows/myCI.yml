@@ -55,12 +55,12 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        html_body: <pre>${{ steps.read_file.outputs.stdout }}</pre>
+        html_body: ${{ steps.read_file.outputs.stdout }}
       
 
     - name: get date in Github
       id: get_date_in_github
-      run: cat ${{ github.workspace }}/result.txt
+      run: echo ${{ steps.read_file.outputs.stdout }}
       
     
     - name: list directory
