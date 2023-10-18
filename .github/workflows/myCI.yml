@@ -29,6 +29,7 @@ jobs:
     # 看下面这个
     # https://github.com/dawidd6/action-send-mail/blob/master/README.md
     # https://www.cnblogs.com/mhkj/p/15903004.html
+    # 一定要开启两步验证和生成专属密码 并且更改密码
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
