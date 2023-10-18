@@ -21,6 +21,9 @@ jobs:
     - name: "Get weather report"
       run: bash ./weather.sh
 
+    - name: Show content of result.html
+      run: cat ${{ github.workspace }}/result.html
+
     # https://blog.csdn.net/sculpta/article/details/106474324
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
