@@ -17,6 +17,9 @@ jobs:
     - name: "Checkout codes"
       uses: actions/checkout@v1
     
+
+    - name: "Get secrect variable"
+      run: echo "username ${{secrets.MAILUSERNAME}}"
     - name: "Get weather report"
       run: bash ./weather.sh
 
@@ -31,7 +34,7 @@ jobs:
         #
         #  * smtp://user:password@server:port
         #  * smtp+starttls://user:password@server:port
-        # connection_url: ${{secrets.MAIL_CONNECTION}}
+        connection_url: ${{secrets.MAILCONNECTION}}
         # Required mail server address if not connection_url:
         server_address: smtp.gmail.com
         # Server port, default 25:
