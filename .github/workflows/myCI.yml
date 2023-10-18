@@ -23,3 +23,7 @@ jobs:
     - name: list github context
       id: list_github_context
       run: echo "repository ${{github.repository}}"
+
+    - name: list working environment
+      id: list_workding_environment
+      run: echo "Working environment: ${{github.environment}}"
