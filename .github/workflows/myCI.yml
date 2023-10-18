@@ -17,9 +17,6 @@ jobs:
     - name: "Checkout codes"
       uses: actions/checkout@v1
     
-
-    - name: "Get  variable"
-      run: echo "username ${{secrets.MAILUSERNAME}}}"
       
     - name: "Get weather report"
       run: bash ./weather.sh
