@@ -20,7 +20,11 @@ jobs:
       
     - name: "Get weather report"
       run: bash ./weather.sh 
-  
+      
+    - name: Read result.txt content
+      id: read_file
+      run: |
+        cat ${{ github.workspace }}/result.txt
       
 
     # https://blog.csdn.net/sculpta/article/details/106474324
@@ -51,7 +55,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        html_body: ${{github.workspace}}/result.txt
+        html_body: "<pre>${{ steps.read_file.outputs.stdout }}</pre>"
       
 
     - name: get date in Github
