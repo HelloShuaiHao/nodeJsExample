@@ -21,10 +21,10 @@ jobs:
     - name: "Get weather report"
       run: bash ./weather.sh 
     
-    - name: Read result.html content
-      id: read_file
+    - name: Read result.txt content
       run: |
-        cat ${{ github.workspace }}/result.txt
+        CONTENT=$(cat ${{ github.workspace }}/result.txt)
+        echo "::set-output name=content::$CONTENT"
       
 
     # https://blog.csdn.net/sculpta/article/details/106474324
@@ -55,7 +55,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        body: "$(cat ${{ github.workspace }}/result.txt)"
+        body: ${{ steps.read_result.outputs.content }}
       
 
     - name: get date in Github
