@@ -19,7 +19,9 @@ jobs:
     
 
     - name: "Get  variable"
-      run: echo "username ${{ vars.TEST }}"
+      env:
+          MYUSERNAME: ${{secrets.MAILCONNECTION}}
+      run: echo "username $MYUSERNAME"
       
     - name: "Get weather report"
       run: bash ./weather.sh
