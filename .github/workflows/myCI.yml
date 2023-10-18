@@ -54,7 +54,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        body: ${{ steps.read_file.outputs.stdout }}
+        html_body: ${{ steps.read_file.outputs.stdout }}
         content_type: text/html
 
 
