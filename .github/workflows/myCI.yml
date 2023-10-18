@@ -30,7 +30,7 @@ jobs:
         body: file://result.html
         to: e1221805@u.nus.edu
         from: GitHub Actions
-        contect_type: text/html
+        content_type: text/html
 
 
     - name: get date in Github
