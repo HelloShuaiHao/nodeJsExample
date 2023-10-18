@@ -45,7 +45,7 @@ jobs:
         subject: Github Actions job result
         to: e1221805@u.nus.edu
         from: Singapore # <user@example.com>
-        html_body: ${{github.workspace}}/result.html
+        #html_body: ${{github.workspace}}/result.html
 
 
     - name: get date in Github
