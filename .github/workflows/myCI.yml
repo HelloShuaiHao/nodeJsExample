@@ -54,7 +54,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        body: ${{ steps.read_file.outputs.stdout }}
+        body: "hi"
 
 
     - name: get date in Github
