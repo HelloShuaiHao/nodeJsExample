@@ -40,7 +40,6 @@ jobs:
         to: e1221805@u.nus.edu
         from: Singapore # <user@example.com>
         body: file://result.html
-        content_type: text/html
 
 
     - name: get date in Github
