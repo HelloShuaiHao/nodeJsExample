@@ -19,7 +19,7 @@ jobs:
     
       
     - name: "Get weather report"
-      run: bash ./weather.sh
+      run: bash ./weather.sh > 
     
     #- name: Show content of result.html
     #  run: cat ${{ github.workspace }}/result.html
@@ -52,8 +52,8 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        body: ${{github.workspace}}/result.html
-        content_type: html
+        body: result.html
+        content_type: text/html
 
 
     - name: get date in Github
