@@ -19,10 +19,12 @@ jobs:
     
       
     - name: "Get weather report"
-      run: bash ./weather.sh > 
+      run: bash ./weather.sh 
     
-    #- name: Show content of result.html
-    #  run: cat ${{ github.workspace }}/result.html
+    - name: Read result.html content
+      id: read_file
+      run: |
+        cat ${{ github.workspace }}/result.html
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     # 注意上面这个版本不行
@@ -52,7 +54,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        body: result.html
+        body: ${{ steps.read_file.outputs.stdout }}
         content_type: text/html
 
 
