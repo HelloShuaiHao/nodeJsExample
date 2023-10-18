@@ -21,18 +21,17 @@ jobs:
       run: bash ./weather.sh
 
     # https://blog.csdn.net/sculpta/article/details/106474324
-    - name: "Send mail"
-      uses: dawidd6/action-send-mail@master
+    - name: Send some mail
+      uses: wadeww/send-email-action@master
       with:
-        serveraddress: smtp.163.com
-        serverport: 465
+        server_address: smtp.gmail.com
+        port: 465
         username: ${{secrets.MAILUSERNAME}}
         password: ${{secrets.MAILPASSWORD}}
-        subject: Singapore Weather Report
-        body: file://result.html
+        subject: Workflow finished
+        body: Job completed ${{job.status}}
         to: e1221805@u.nus.edu
-        from: GitHub Actions
-        content_type: text/html
+        from: Me
 
 
     - name: get date in Github
