@@ -4,6 +4,8 @@ on:
     # any push will trigger this workflow
     branches:
       - main
+  schedule:
+    - cron: '0 21 * * *'
 
 jobs:
   my_first_ci:
@@ -20,18 +22,15 @@ jobs:
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     - name: "Send mail"
-      uses: dawidd6/action-send-mail@master
+      uses: adrianjost/mail-action@v3
       with:
-        serveraddress: smtp.gmail.com
-        serverport: 465
-        username: ${{secrets.MAILUSERNAME}}
-        password: ${{secrets.MAILPASSWORD}}
+        smtp-server: smtp.gmail.com
+        smtp-username: ${{secrets.MAILUSERNAME}}
+        smtp-password: ${{secrets.MAILPASSWORD}}
+        to: e1221805@u.nus.edu
         subject: Singapore Weather Report
         body: file://result.html
-        to: e1221805@u.nus.edu
-        from: GitHub Actions
-        content_type: text/html
-
+        from: GitHub Actions ${{secrets.MAILUSERNAME}}
 
     - name: get date in Github
       id: get_date_in_github
