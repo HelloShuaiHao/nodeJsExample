@@ -22,7 +22,7 @@ jobs:
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     - name: "Send mail"
-      uses: dawidd6/action-send-mail@master
+      uses: dawidd6/action-send-mail
       with:
         serveraddress: smtp.gmail.com
         serverport: 465
