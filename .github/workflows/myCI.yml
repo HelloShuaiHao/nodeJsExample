@@ -23,7 +23,7 @@ jobs:
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     - name: Send mail
-      uses: dawidd6/action-send-mail@v3
+      uses: dawidd6/action-send-mail@master
       with:
         # Specify connection via URL (replaces server_address, server_port, secure,
         # username and password)
@@ -32,23 +32,15 @@ jobs:
         #  * smtp://user:password@server:port
         #  * smtp+starttls://user:password@server:port
         connection_url: ${{secrets.MAILCONNECTION}}
-        # Required mail server address if not connection_url:
         server_address: smtp.gmail.com
-        # Server port, default 25:
         server_port: 465
-        # Optional (recommended) mail server username:
         username: ${{secrets.MAILUSERNAME}}
-        # Optional (recommended) mail server password:
         password: ${{secrets.MAILPASSWORD}}
-        # Required mail subject:
         subject: Github Actions job result
-        # Required recipients' addresses:
         to: e1221805@u.nus.edu
-        # Required sender full name (address can be skipped):
         from: Singapore # <user@example.com>
-        # Optional plain body:
         body: file://result.html
-       
+        content_type: text/html
 
 
     - name: get date in Github
