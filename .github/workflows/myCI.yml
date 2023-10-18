@@ -1,21 +1,21 @@
 name: My first workflow
 on:
-# any push will trigger this workflow
-- push 
+  push:
+    # any push will trigger this workflow
+    branches:
+      - main
 
 jobs:
-	my_first_ci:
-		# from this point onwards it's ubuntu
-		runs-on: ubuntu-latest
-		
-		# run means just run a linux command in shell
-		steps:
-		- name: get date in Github
-		  id: get_date_in_github
-		  run: echo "date in github $(date)"
-		
-		- name: list directory
-		  id: list_directory
-		  run: echo "$(ls-l)"
+  my_first_ci:
+    # from this point onwards it's ubuntu
+    runs-on: ubuntu-latest
     
-
+    # run means just run a linux command in shell
+    steps:
+    - name: get date in Github
+      id: get_date_in_github
+      run: echo "date in github $(date)"
+    
+    - name: list directory
+      id: list_directory
+      run: echo "$(ls -l)"
