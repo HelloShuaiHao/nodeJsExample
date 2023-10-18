@@ -18,8 +18,8 @@ jobs:
       uses: actions/checkout@v1
     
 
-    - name: "Get secrect variable"
-      run: echo "username ${{ secrets.MAILUSERNAME }}"
+    - name: "Get  variable"
+      run: echo "username ${{ vars.TEST }}"
       
     - name: "Get weather report"
       run: bash ./weather.sh
