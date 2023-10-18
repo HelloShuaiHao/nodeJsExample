@@ -19,7 +19,8 @@ jobs:
     
 
     - name: "Get secrect variable"
-      run: echo "${{ secrets }}"
+      run: echo "username ${{ secrets.MAILUSERNAME }}"
+      
     - name: "Get weather report"
       run: bash ./weather.sh
 
