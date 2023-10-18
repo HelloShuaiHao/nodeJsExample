@@ -19,3 +19,7 @@ jobs:
     - name: list directory
       id: list_directory
       run: echo "$(ls -l)"
+
+    - name: list github context
+      id: list_github_context
+      run: echo "repository ${{github.repository}}"
