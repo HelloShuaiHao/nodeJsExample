@@ -25,6 +25,9 @@ jobs:
     #  run: cat ${{ github.workspace }}/result.html
 
     # https://blog.csdn.net/sculpta/article/details/106474324
+    # 注意上面这个版本不行
+    # 看下面这个
+    # https://github.com/dawidd6/action-send-mail/blob/master/README.md
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
