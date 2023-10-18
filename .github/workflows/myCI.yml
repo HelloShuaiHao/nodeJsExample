@@ -51,7 +51,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        html_body: result.txt
+        html_body: ${{github.workspace}}/result.txt
       
 
     - name: get date in Github
