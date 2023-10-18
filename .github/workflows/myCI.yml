@@ -38,7 +38,7 @@ jobs:
     # koun riga kjnn bxml
     # 这是第二个
     - name: Send mail
-      uses: juanformoso/action-send-mail@master
+      uses: dawidd6/action-send-mail@v3
       with:
         # Specify connection via URL (replaces server_address, server_port, secure,
         # username and password)
