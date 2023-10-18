@@ -24,7 +24,7 @@ jobs:
     - name: Read result.html content
       id: read_file
       run: |
-        cat ${{ github.workspace }}/result.html
+        cat ${{ github.workspace }}/result.txt
 
     # https://blog.csdn.net/sculpta/article/details/106474324
     # 注意上面这个版本不行
@@ -54,7 +54,7 @@ jobs:
         subject: Github Actions job result
         to: arksherz@gmail.com
         from: Singapore # <user@example.com>
-        body: ${{ github.workspace }}/result.txt
+        body: ${{ steps.read_file.outputs.stdout }}
 
 
     - name: get date in Github
