@@ -12,6 +12,27 @@ jobs:
     
     # run means just run a linux command in shell
     steps:
+    - name: "Checkout codes"
+      uses: actions/checkout@v1
+    
+    - name: "Get weather report"
+      run: bash ./weather.sh
+
+    # https://blog.csdn.net/sculpta/article/details/106474324
+    - name: "Send mail"
+      uses: dawidd6/action-send-mail@master
+      with:
+        serveraddress: smtp.gmail.com
+        serverport: 465
+        username: ${{secrets.MAILUSERNAME}}
+        password: ${{secrets.MAILPASSWORD}}
+        subject: Singapore Weather Report
+        body: file://result.html
+        to: e1221805@u.nus.edu
+        from: GitHub Actions
+        contect_type: text/html
+
+
     - name: get date in Github
       id: get_date_in_github
       run: echo "date in github $(date)"
@@ -24,6 +45,4 @@ jobs:
       id: list_github_context
       run: echo "repository ${{github.repository}}"
 
-    - name: list working environment
-      id: list_workding_environment
-      run: echo "Working environment: ${{github.environment}}"
+    
